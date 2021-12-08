@@ -7,6 +7,25 @@ export default function HomeScreen(
   {navigation}) {
     const [counter, setCounter] = useState(0);
     return (
+      <View style={styles.container}>
+      <Button 
+        title="Go to List View" 
+        onPress={() => {navigation.navigate ("ListViewScreen", {})} }>
+      </Button>
+      <View style={{marginTop: 10}}></View>
+      <Button
+        title='Increase Count'
+        onPress={() => {setCounter(counter+1);}}
+      />
+      <View style={{marginTop:10}}></View>
+      <Button
+        title='Decrease Count'
+        onPress={() => {
+          setCounter(counter-1);}}
+      />
+      <View style={{marginTop:10}}></View>
+      <Text style={styles.paragraph}> Current count: {counter}</Text>
+      </View> 
   );
 }
 
